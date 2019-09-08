@@ -1,0 +1,28 @@
+curl -XPUT "localhost:9200/_template/hotspot-user-access-template" -H "content-type: application/json" -d '
+{
+  "index_patterns": ["hotspot-user-access-*"],
+  "mappings": {
+    "properties": {
+      "hotspot_id": { "type": "integer" },
+      "hotspot_desc": { "type": "text" },
+      "hotspot_location": { "type": "geo_point" },
+      "hotspot_ip": { "type": "ip" },
+      "user_id": { "type": "integer" },
+      "user_email": { "type": "text" },
+      "user_mac": { "type": "text" },
+      "user_mobile_manufacturer": {
+        "type": "text",
+        "fields" : { "raw" : { "type" : "keyword", "ignore_above" : 100 } }
+      },
+      "user_birthday": { "type": "date", "format": "strict_year_month_day" },
+      "user_name": { "type": "text" },
+      "user_city": { "type": "keyword" },
+      "user_country": { "type": "keyword" },
+      "@timestamp": { "type": "date" }
+    }
+  },
+  "aliases": {
+    "hotspot-user-access": { }
+  }
+}
+'
