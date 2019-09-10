@@ -87,7 +87,7 @@ The second one allows us to skip the bootstrap checks, because it thinks you are
 ```
 discovery.type: single-node
 ```
-Enable and start the new service, it might takes a few minutes
+Enable and start the new service, it might take a few minutes
 ```
 $ sudo /bin/systemctl daemon-reload
 $ sudo /bin/systemctl enable elasticsearch.service
@@ -133,7 +133,8 @@ This database only stores two tables with columns below
 
 All those columns make the **extra info** which Logstash reads and will index into your elasticsearch cluster. Remember the http request only contains a part of the data that will be indexed into Elasticsearch
 
-You should also create a read-only user that Logstash needs to read from that database. Run the script [logstash-user.sql](database/logstash-user.sql) into the database to create the user `logstash`.
+You should also create a read-only user that Logstash needs to read from that database. Run the script [logstash-user.sql](database/logstash-user.sql) into the database to create the user `logstash`
+
 ```
 $ sudo mysql -u root -pXXXX < logstash-user.sql
 ```
