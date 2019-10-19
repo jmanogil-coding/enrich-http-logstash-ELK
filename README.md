@@ -21,7 +21,7 @@ We will start to build this project from scratch and you will be provided with a
 
 ## Requirements
 
-In a production environment you will be used to managing complex infrastructures with different servers, clusters, nodes, dockers, and so on. However, my proposal is to use just one **virtual machine** with **Ubuntu Server** which will hold a **MySQL** server, **Elasticsearch** and **Logstash**. Because of the data extraction Logstash does from our MySQL database to get the extra info, you need to install te **jdbc** connector as well.
+In a production environment you will be used to managing complex infrastructures with different servers, clusters, nodes, dockers, and so on. However, my proposal is to use just one **virtual machine** with **Ubuntu Server** which will hold a **MySQL** server, **Elasticsearch** and **Logstash**. Because of the data extraction Logstash does from our MySQL database to get the extra info, you need to install the **jdbc** connector as well.
 
 Anyhow, you probably realised that **Kibana**  (the **K** for the **ELK Stack** package) is not going to be installed. In fact, it is a great tool which allows us to use a JSON interface to work with your cluster easily, sending requests and so on. No worries, `curl` software is more than enough to fulfil this project.
 
